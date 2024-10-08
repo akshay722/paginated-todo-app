@@ -29,6 +29,7 @@ export default function Home() {
     [setPage]
   );
 
+  // Handles adding a new todo item
   const handleAddTodo = async (title: string) => {
     const newTodo = await addTodo(title);
     if (newTodo) {
@@ -36,6 +37,7 @@ export default function Home() {
     }
   };
 
+  // Handles marking a todo as complete or incomplete
   const handleToggleComplete = async (id: number, completed: boolean) => {
     const updatedTodo = await toggleComplete(id, completed);
     if (updatedTodo) {
@@ -47,6 +49,7 @@ export default function Home() {
     }
   };
 
+  // Handles deleting a todo item
   const handleDeleteTodo = async (id: number) => {
     const success = await deleteTodo(id);
     if (success) {

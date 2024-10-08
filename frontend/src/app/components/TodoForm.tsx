@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// TodoForm component for adding new todos
 const TodoForm: React.FC<any> = ({ onAddTodo }) => {
   const [title, setTitle] = useState("");
 

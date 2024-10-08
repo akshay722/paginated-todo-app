@@ -11,9 +11,9 @@ export default function useFetchAPI(endpoint: string) {
     // Asynchronous function to fetch data from the API
     const fetchData = async () => {
       try {
-        const response = await fetch(`${API_BASE_URL}/${endpoint}`); // Fetch data from the endpoint
-        const json = await response.json(); // Parse response as JSON
-        setData(json); // Update state with the fetched data
+        const response = await fetch(`${API_BASE_URL}/${endpoint}`);
+        const json = await response.json();
+        setData(json);
       } catch (e) {
         console.log("error");
       } finally {
@@ -24,6 +24,5 @@ export default function useFetchAPI(endpoint: string) {
     fetchData();
   }, [endpoint]);
 
-  // Return the fetched data and loading state
   return { data, isLoading, setData };
 }
